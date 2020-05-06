@@ -1,0 +1,10 @@
+// Is any of the bools true?
+Bool.or: Bool -> Bool -> Bool //prim//
+  (a) (b)
+  a<() Bool>
+  | b<() Bool>
+    | Bool.true;
+    | Bool.true;;
+  | b<() Bool>
+    | Bool.true;
+    | Bool.false;;

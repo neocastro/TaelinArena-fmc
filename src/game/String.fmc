@@ -1,0 +1,5 @@
+String: Type //prim//
+  string<P: String -> Type> ->
+  (strnil: P(String.nil)) ->
+  (strcons: (head: Char) -> (tail: String) -> P(String.cons(head)(tail))) ->
+  P(string)

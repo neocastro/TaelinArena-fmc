@@ -1,0 +1,6 @@
+// Is this list empty?
+List.is_empty: <A: Type> -> List(A) -> Bool
+  <A> (list)
+  list<() Bool>
+  | Bool.true;
+  | (head) (tail) Bool.false;

@@ -1,0 +1,3 @@
+String.cons: Char -> String -> String
+  (head) (tail)
+  <P> (strnil) (strcons) strcons(head)(tail)
