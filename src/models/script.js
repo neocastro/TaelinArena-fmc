@@ -80,11 +80,13 @@
     var numbers_path = "/../game/F64.numbers.fmc";
     var numbers_path = path.join(__dirname, numbers_path);
     var number_code = "";
-    for (var i = 0; i < model_names.length; ++i){
-      let pred = (i > 0) ? i - 1 : 0;
-      let term = "F64."+i+": F64 \n";
-      let fmc_code = "  F64.add(F64.1)(F64."+pred+")\n\n";
-      number_code += term + fmc_code;
+    for (var i = 0; i < file_names.length; ++i){
+      if ((i > 2) && (i !==  180)) { // Numbers 0, 1 and 180 already exists on Moonad
+        let pred = i - 1;
+        let term = "F64."+i+": F64 \n";
+        let fmc_code = "  F64.add(F64.1)(F64."+pred+")\n\n";
+        number_code += term + fmc_code;
+      }
     }
 
     console.log("Update numbers " + numbers_path);

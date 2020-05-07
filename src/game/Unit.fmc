@@ -1,4 +1,0 @@
-Unit : Type //prim//
-  unit<P: Unit -> Type> ->
-  (new: P(Unit.new)) ->
-  P(unit)

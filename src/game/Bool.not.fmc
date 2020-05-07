@@ -1,6 +1,0 @@
-// Boolean negation.
-Bool.not: Bool -> Bool //prim//
-  (a)
-  a<() Bool>
-  | Bool.false;
-  | Bool.true;
