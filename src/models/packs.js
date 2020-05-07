@@ -11,8 +11,12 @@ module.exports = {
     "from": 189,
     "til": 353
   },
-  "darth_vader": {
+  "bleskape": {
     "from": 353,
-    "til": 457
+    "til": 455
+  },
+  "darth_vader": {
+    "from": 455,
+    "til": 559
   }
 }

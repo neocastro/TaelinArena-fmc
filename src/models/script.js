@@ -76,22 +76,6 @@
     console.log("updated " + packs_js_path);
     fs.writeFileSync(packs_js_path, packs_text);
 
-    // Creates a file containing F64 numbers
-    var numbers_path = "/../game/F64.numbers.fmc";
-    var numbers_path = path.join(__dirname, numbers_path);
-    var number_code = "";
-    for (var i = 0; i < file_names.length; ++i){
-      if ((i > 2) && (i !==  180)) { // Numbers 0, 1 and 180 already exists on Moonad
-        let pred = i - 1;
-        let term = "F64."+i+": F64 \n";
-        let fmc_code = "  F64.add(F64.1)(F64."+pred+")\n\n";
-        number_code += term + fmc_code;
-      }
-    }
-
-    console.log("Update numbers " + numbers_path);
-    fs.writeFileSync(numbers_path, number_code);
-
     // Updates TaelinArena.ModelsIds.fmc
     var model_fm_path = "/../game/TaelinArena.ModelIds.fmc";
     var model_fm_path = path.join(__dirname, model_fm_path);
@@ -99,7 +83,7 @@
     for (var i = 0; i < model_names.length; ++i){
       let name = model_names[i];
       let model_name = name.replace(new RegExp("/","g"), "_").toUpperCase();
-      let fmc_code = ": F64 " + "F64." + i + "\n";
+      let fmc_code = ": F64 " + `F64.parse("${i}")\n`;
       model_fm_text += model_name + fmc_code;
     }
 
